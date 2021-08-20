@@ -7,6 +7,7 @@ population <- function(year, res="5", path) {
 	res <- ifelse(res==0.5, "30s", paste0(res, "m"))
 	
 	filename <- paste0("gpw_v4_population_density_rev11_", year, "_", res, ".tif")
+	dir.create(file.path(path, "pop"), F, F)
 	filepath <- file.path(path, "pop", filename)
 
 	if (!(file.exists(filepath))) {
